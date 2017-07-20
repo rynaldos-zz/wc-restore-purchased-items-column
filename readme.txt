@@ -4,7 +4,7 @@ Contributors: rynald0s
 Tags: purchased items, bought items, column, orders page, orders, missing, woocommerce, woocommerce update, missing column, order info, order summary, purchased column, re-instate, restore, 3.0.0
 Requires at least: 4.5.0
 Tested up to: 4.7.3
-Stable tag: 1.0
+Stable tag: 1.2
 WC requires at least: 3.0
 WC tested up to: 3.0.3
 License: GPLv3 or later License
@@ -32,4 +32,8 @@ This plugin restores the “Purchased Items” column in the orders page.
 == Changelog ==
 
 = 1.0 = 
- * Initial Release
+* initial Release
+
+= 1.2 = 
+* support for WC 3.1
+* resolves deprecation notices
