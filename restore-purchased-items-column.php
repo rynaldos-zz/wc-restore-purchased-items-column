@@ -53,8 +53,10 @@ function wc_shop_custom_column($column)
 
                     foreach ( $the_order->get_items() as $item ) {
                         $product        = apply_filters( 'woocommerce_order_item_product', $item->get_product(), $item );
-                        $item_meta      = new WC_Order_Item_Meta( $item, $product );
-                        $item_meta_html = $item_meta->display( true, true );
+                        $item_meta = (WC()->version < '3.1.0') ? new WC_Order_Item_Meta( $item ) : new WC_Order_Item_Product; 
+                        $item_meta_html = (WC()->version < '3.1.0') ? $item_meta->display( true, true ) : $item_meta->get_product(); 
+                        //$item_meta      = new WC_Order_Item_Meta( $item, $product );
+                        //$item_meta_html = $item_meta->display( true, true );
                         ?>
                         <tr class="<?php echo apply_filters( 'woocommerce_admin_order_item_class', '', $item, $the_order ); ?>">
                             <td class="qty"><?php echo esc_html( $item->get_quantity() ); ?></td>
